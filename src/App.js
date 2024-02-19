@@ -87,7 +87,8 @@ function App() {
             <h3>{weather.location.name}</h3>
             <p>
               Current temprature: {weather.current.temp_c}°C,{" "}
-              {weather.current.condition.text}
+              {weather.current.condition.text}, Humidity{" "}
+              {weather.current.humidity}
             </p>
             <img src={weather.current.condition.icon} alt="icon"></img>
           </div>
@@ -98,7 +99,7 @@ function App() {
                 <th scope="col">Date</th>
                 <th scope="col">Avg Temp</th>
                 <th scope="col">Humidity</th>
-                <th scope="col">UV</th>
+                <th scope="col">Condition</th>
               </tr>
             </thead>
             <tbody>
@@ -109,7 +110,7 @@ function App() {
                       <td>{d.date}</td>
                       <td>{d.day.avgtemp_c}</td>
                       <td>{d.day.avghumidity}</td>
-                      <td>{d.day.uv}</td>
+                      <td>{d.day.condition.text}</td>
                     </tr>
                   );
                 }
